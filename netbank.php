@@ -36,7 +36,7 @@ class NetBank{
 	/**
 	 * NetBank URL
 	 */
-	const netbankURL = 'https://www2.my.commbank.com.au';
+	const netbankURL = 'https://www1.my.commbank.com.au';
 
 	/**
 	 * Log into NetBank
