@@ -271,6 +271,8 @@ class NetBank{
 	public function processTransfer($fromId, $toId, $amount, $desc = ""){
 		$amount = number_format($amount, 2, '.', '');
 
+		$this->initialDataStale = true;
+
 		return $this->callNetBank(
 			'processTransfer',
 			[
@@ -378,6 +380,9 @@ class NetBank{
 	 */
 	public function processBPay($from, $billerId, $crn, $description, $amount){
 		$amount = number_format($amount, 2, '.', '');
+
+		// Data is stale now download from Netbank
+		$this->initialDataStale = true;
 
 		return $this->callNetBank(
 			'processBPay',
